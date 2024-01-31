@@ -1,33 +1,20 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
-    <div class="col-12">
-        {% if user.is_active and  user.is_superuser %}
-            <a href="#" class="btn btn-secondary m-2">Добавить публикацию</a>
-        {% endif %}
-    </div>
     {% for object in object_list %}
-        <div class="col-md-5">
+        <div class="col-md-4">
             <div class="card mb-4 box-shadow">
+                <img src="{{ object.image.url }}" width="" height="200" alt="#"/>
                 <div class="card-body">
-                    <p class="card-text">{{ object|title }}</p>
+                    <p class="card-text">{{ object }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="#"
-                               class="btn btn-sm btn-outline-secondary">Посмотреть публикацию</a>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Открыть</button>
                         </div>
-                        {% if user.is_authenticated %}
-                            <div class="btn-group">
-                                <a href="#"
-                                   class="btn btn-sm btn-outline-secondary">Удалить публикацию</a>
-                            </div>
-                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     {% endfor %}
-    <div class="col-12">
-        <a href="#" class="btn btn-secondary m-2"><< Назад</a>
-    </div>
 {% endblock %}
