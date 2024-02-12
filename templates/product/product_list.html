@@ -11,7 +11,8 @@
                     <p class="card-text">{{ object.price }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Открыть</button>
+                            <a href="{% url 'product:product_detail' object.pk %}" type="button"
+                               class="btn btn-sm btn-outline-secondary">Смотреть</a>
                         </div>
                     </div>
                 </div>
