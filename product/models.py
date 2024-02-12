@@ -11,7 +11,6 @@ class Product(models.Model):
     image = models.ImageField(upload_to='image/', verbose_name='Изображение')
     pub_date = models.DateField(default=timezone.now, verbose_name='Дата публикации')
 
-
     def __str__(self):
         return self.title
 
