@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
     <div class="col-12">
         <div class="row">
@@ -8,8 +7,20 @@
                     <div class="card-body">
                         <form method="post">
                             {% csrf_token %}
-                            {{ form.as_p }}
-                            <button type="submit" class="btn btn-success">Войти</button>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                       aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                       placeholder="Password">
+                            </div>
+                            <nav class="blog-pagination">
+                                <a class="btn btn-success" href="#">Войти</a>
+                                <a class="btn btn-warning" href="#">Регистрация</a>
+                            </nav>
                         </form>
                     </div>
                 </div>
