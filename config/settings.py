@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'product',  # добавлено приложение продукта
-    'user',   # добавлено приложения пользователя
+    'users',   # добавлено приложения пользователя
+    'phonenumber_field',  # пагинация по номеру телефона
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+PHONENUMBER_DEFAULT_REGION = 'RU'   # установка региона номера телефона
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
@@ -131,3 +134,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+AUTH_USER_MODEL = 'users.User'
